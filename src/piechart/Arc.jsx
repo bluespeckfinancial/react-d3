@@ -48,6 +48,7 @@ module.exports = React.createClass({
           stroke={props.sectorBorderColor}
           onMouseOver={props.handleMouseOver}
           onMouseLeave={props.handleMouseLeave}
+          onClick={props.onSectionClick}
         />
         {props.showOuterLabels ? this.renderOuterLabel(props, arc) : null}
         {props.showInnerLabels ? this.renderInnerLabel(props, arc) : null}
@@ -106,7 +107,8 @@ module.exports = React.createClass({
           style={{
             'textAnchor': 'middle',
             'fill': props.labelTextFill,
-            'shapeRendering': 'crispEdges'
+            'shapeRendering': 'crispEdges',
+            "fontSize": "12px"
           }}>
           {props.label}
         </text>

@@ -23,7 +23,9 @@ module.exports = React.createClass({
     showInnerLabels:    React.PropTypes.bool,
     showOuterLabels:    React.PropTypes.bool,
     sectorBorderColor:  React.PropTypes.string,
-    hoverAnimation:     React.PropTypes.bool
+    hoverAnimation:     React.PropTypes.bool,
+    onSectionClick:     React.PropTypes.func
+
   },
 
   getDefaultProps: function() {
@@ -33,7 +35,8 @@ module.exports = React.createClass({
       colors:             d3.scale.category20c(),
       colorAccessor:      (d, idx) => idx,
       valueTextFormatter: (val) => `${ val }%`,
-      hoverAnimation:     true
+      hoverAnimation:     true,
+      onSectionClick:     (a) => false
     };
   },
 
@@ -70,6 +73,7 @@ module.exports = React.createClass({
             showOuterLabels={props.showOuterLabels}
             sectorBorderColor={props.sectorBorderColor}
             hoverAnimation={props.hoverAnimation}
+            onSectionClick={props.onSectionClick}
           />
         </g>
       </Chart>

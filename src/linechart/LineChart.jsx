@@ -26,7 +26,8 @@ module.exports = React.createClass({
     displayDataPoints: React.PropTypes.bool,
     hoverAnimation:    React.PropTypes.bool,
     interpolate:       React.PropTypes.bool,
-    interpolationType: React.PropTypes.string
+    interpolationType: React.PropTypes.string,
+    keyAccessor:       React.PropTypes.func
   },
 
   getDefaultProps() {
@@ -37,7 +38,8 @@ module.exports = React.createClass({
       interpolate:       false,
       interpolationType: null,
       displayDataPoints: true,
-      hoverAnimation:    true
+      hoverAnimation:    true,
+      keyAccessor:       (d, idx) => idx
     };
   },
 
@@ -92,6 +94,7 @@ module.exports = React.createClass({
             yAccessor={props.yAccessor}
             interpolationType={interpolationType}
             displayDataPoints={props.displayDataPoints}
+            keyAccessor={props.keyAccessor}
           />
       );
     });
