@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "d3": "^3.5.0",
-    "immstruct": "^1.4.0",
+    "immstruct": "git+ssh://git@github.com:omniscientjs/immstruct.git#master",
     "react": ">0.12.0"
   },
   "scripts": {
